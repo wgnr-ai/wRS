@@ -29,3 +29,7 @@ rounds before adoption. Known open items at v0.1:
   finished work" principle in §6.7 is retained as methodology and references no incident);
   backup artifact naming patterns, secret-store key names, and internal project slugs
   confirmed absent by grep.
+- **Design note (2026-11-26, Principal decision):** `wrs-logo-light/dark.png` and
+  `wrs-favicon-light/dark.svg` are **intentionally byte-identical pairs**. The mark is
+  single-color and approved for both backgrounds. Do not flag or "fix" them as duplicate
+  exports. The social cards are genuine light/dark variants.
