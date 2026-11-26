@@ -1,3 +1,11 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/wrs-logo-dark.png">
+    <source media="(prefers-color-scheme: light)" srcset="assets/wrs-logo-light.png">
+    <img alt="wRS v0.1 — Agents that change, proven." src="assets/wrs-logo-light.png" width="225">
+  </picture>
+</p>
+
 # wRS
 
 ### The open self-improvement governance standard for AI agents.
@@ -66,10 +74,10 @@ stack:
 
 ## License
 
-Apache-2.0. See <LICENSE>.
+Apache-2.0. See [LICENSE](LICENSE).
 
 ## Contributing
 
-See <CONTRIBUTING.md>.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Built by [wgnr.ai](https://wgnr.ai) (wRS v0.1). Agents that change, proven.
