@@ -16,13 +16,17 @@ Your work is evaluated only on the state of the artifacts you leave behind. Lead
 
 ## Evidence base
 
-| Study | Model | Result |
-| --- | --- | --- |
-| 002 | mimo-v2.6-flash | Adopt: 3/3 rules, tokens/completed −62.8% |
-| 003 | deepseek-flash | Replicates: 3/3 rules, −75.7% |
-| 004 | deepseek-flash | Confirmed long-horizon (Run 2), −86.6%, scope leak 8→0 |
-| 005 | deepseek-flash | Holds on delegation: −58.6%, invocations 25→15 |
-| production | fleet | Null at aggregates — published, see [evidence/RESULTS.md](evidence/RESULTS.md) |
+| Study | Result |
+| --- | --- |
+| 002 (Model 1) | Adopt: 3/3 rules, tokens/completed −62.8% |
+| 003 (Model 2) | Replicates: 3/3 rules, −75.7% |
+| 004 (Model 2) | Confirmed long-horizon (Run 2), −86.6%, scope leak 8→0 |
+| 005 (Model 2) | Holds on delegation: −58.6%, invocations 25→15 |
+| production | Null at aggregates — published, see [evidence/RESULTS.md](evidence/RESULTS.md) |
+
+Model and provider identities are withheld from the public record (pre-publish internal
+review): the load-bearing claim is cross-provider replication, not vendor names; full
+reports retain them internally.
 
 ## Provenance notes
 

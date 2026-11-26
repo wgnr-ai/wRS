@@ -125,9 +125,11 @@ interrupts immediately.
 
 ## 9. Relationship to wOS
 
-wOS and wRS are siblings: wOS specifies how an agent behaves in five domains (communication,
-verification, escalation, delegation, memory); wRS specifies how an agent is allowed to
-change. An implementation may conform to either or both; the two do not overlap.
+wOS and wRS are siblings: wOS specifies how an agent **behaves**; wRS specifies how an agent
+is allowed to **change**. An implementation may conform to either or both; the two do not
+overlap, and this specification deliberately restates no wOS counts (domains, directives,
+checks) — those are upstream facts that move. Cite [wOS](https://wos.wgnr.ai) for them;
+our verification record lives in [docs/index.md](docs/index.md).
 
 ## Appendix A — Artifact Grading Directive (AGD)
 

@@ -1,7 +1,9 @@
 # Evidence — what the protocol actually produced
 
 Four pre-registered experiments and one production check, run 2026-11-19 → 2026-11-26 on a
-production Agent Zero fleet (models: `mimo-v2.6-flash`, `deepseek-flash`). Every rule below
+production Agent Zero fleet (two flash-class models from different providers; vendor
+identities withheld from the public record — cross-provider replication is the load-bearing
+claim, not the vendor names). Every rule below
 was registered before the first run. Full reports, fixtures, and graders exist for each
 study; this file carries the results and the honest footnotes.
 
