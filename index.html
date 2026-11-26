@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wRS — Open self-improvement governance standard for AI agents</title>
+  <meta name="description" content="wRS v0.1 — Open self-improvement governance standard for AI agents. How they change: charter-gated autonomy, pre-registered evidence, independent rollback.">
+  <meta property="og:title" content="wRS — Agents that change, proven.">
+  <meta property="og:description" content="The open self-improvement governance standard for AI agents.">
+  <meta property="og:url" content="https://wrs.wgnr.ai">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="wRS — Agents that change, proven.">
+  <meta name="twitter:description" content="The open self-improvement governance standard for AI agents.">
+  <style>
+    :root {
+      --bg-color: #ffffff;
+      --text-color: #1f2328;
+      --code-bg: #f6f8fa;
+      --border-color: #d0d7de;
+      --link-color: #0969da;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #0d1117;
+        --text-color: #e6edf3;
+        --code-bg: #161b22;
+        --border-color: #30363d;
+        --link-color: #58a6ff;
+      }
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h3 {
+      margin-top: 1rem;
+      font-weight: 400;
+    }
+
+    header p {
+      margin: 0.5rem 0;
+    }
+
+    main {
+      line-height: 1.7;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+    }
+
+    h2 {
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.3em;
+      margin-top: 2rem;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 1rem 0;
+      display: block;
+      overflow-x: auto;
+    }
+
+    th, td {
+      border: 1px solid var(--border-color);
+      padding: 0.5em 0.9em;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--code-bg);
+    }
+
+    code {
+      background-color: var(--code-bg);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.9em;
+    }
+
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .badges img {
+      display: inline-block;
+      margin: 0.15rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      font-size: 0.9em;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>wRS</h1>
+    <h3>The open self-improvement governance standard for AI agents.</h3>
+    <p class="badges">
+      <img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="License: Apache-2.0">
+      <img src="https://img.shields.io/badge/spec-v0.1-orange" alt="Spec version: v0.1">
+      <img src="https://img.shields.io/badge/status-Draft-yellow" alt="Status: Draft">
+    </p>
+    <p>
+      <a href="SPECIFICATION.md">Read the Spec</a> ·
+      <a href="protocol/foundry.md">The Protocol</a> ·
+      <a href="evidence/RESULTS.md">Evidence</a> ·
+      <a href="AGD.md">Case Study: AGD</a> ·
+      <a href="CONTRIBUTING.md">Contribute</a>
+    </p>
+  </header>
+
+  <main>
+    <h2>What it is</h2>
+    <p>
+      wRS governs how agents <strong>change</strong>: their own prompts, instructions, and
+      workflows. <a href="https://wos.wgnr.ai">wOS</a> governs how agents behave; wRS governs
+      how they improve. Like wOS, it is a specification rather than a framework. It sits on
+      top of your runtime and defines the contract a self-improving system must satisfy
+      before it ships a change to itself.
+    </p>
+    <p>The contract in one line: <strong>improvement is earned by pre-registered evidence,
+    shipped through a narrow class, verified by a checker the actor cannot write, and
+    reversible by a party other than the one that shipped.</strong></p>
+
+    <h2>Why it exists</h2>
+    <p>Agents today improve in exactly two ways, and both are wrong:</p>
+    <ul>
+      <li><strong>Ungoverned.</strong> Self-rewriting loops that edit their own instructions
+      continuously and keep whatever scores better. No gates, no audit, and in the wild
+      examples they run generated code with production permissions. Fast and unauditable.</li>
+      <li><strong>Not at all.</strong> Frozen prompts. Every improvement waits for a human to
+      notice, design, test, and apply it. Safe and slow, and it never compounds.</li>
+    </ul>
+    <p>wRS defines the middle path: a <strong>charter-gated improvement loop</strong>. An
+    agent may self-initiate and auto-ship inside a pre-registered, mechanically verified
+    class, while spend, external effects, irreversible actions, and boundary changes stay
+    human. The level you operate at is explicit, printed, and checkable.</p>
+
+    <h2>The doctrine is production-tested</h2>
+    <p>
+      wRS was authored inside <a href="https://wgnr.ai">wgnr.ai</a> and validated the way it
+      prescribes: pre-registered decision rules, blind runs, self-tested mechanical graders,
+      and literal verdicts across four experiments, <strong>including a published null
+      result</strong> where fleet telemetry did not confirm the laboratory finding. The full
+      evidence, failures included, is in <a href="evidence/RESULTS.md">evidence/RESULTS.md</a>.
+    </p>
+
+    <h2>Conformance levels</h2>
+    <table>
+      <thead>
+        <tr><th>Level</th><th>Definition</th><th>Who it is for</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>L0</strong> Manual</td><td>Humans design, run, judge, apply everything.</td><td>Starting out</td></tr>
+        <tr><td><strong>L1</strong> Autonomous execution</td><td>The agent does the work; a human approves every change.</td><td>Most production teams today</td></tr>
+        <tr><td><strong>L2</strong> Charter-gated autonomy</td><td>The agent self-initiates and auto-ships inside an allowlisted, mechanically verified class; spend, gates, and boundaries stay human; an independent verifier can roll back.</td><td>Teams with evidence discipline</td></tr>
+        <tr><td><strong>L3</strong> Unconstrained self-modification</td><td>Continuous autonomous rewriting with no gates.</td><td><strong>Non-conformant by definition. Never.</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h2>Positioning</h2>
+    <p>wRS does not compete with adjacent standards. Each governs a different layer of the
+    same stack:</p>
+    <table>
+      <thead>
+        <tr><th>Standard</th><th>What it governs</th><th>Relationship</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><a href="https://wos.wgnr.ai">wOS</a> (wgnr.ai)</td><td>How agents behave</td><td>Sibling: behavior vs. change</td></tr>
+        <tr><td><a href="https://github.com/microsoft/agent-governance-toolkit">ACS</a> (Microsoft)</td><td>Security policy</td><td>Complementary: policy vs. change process</td></tr>
+        <tr><td><a href="https://agents.md/">AGENTS.md</a> (AAIF)</td><td>Context and instructions</td><td>Complementary: knowledge vs. change governance</td></tr>
+        <tr><td><a href="https://buildermethods.com/agent-os">Agent OS</a> (Builder Methods)</td><td>Coding standards</td><td>Complementary: code vs. self-change</td></tr>
+        <tr><td>Autonomous self-rewriting (RRSI-style)</td><td>Continuous self-modification</td><td>wRS is the gated form of exactly this; L3 marks the ungoverned form non-conformance</td></tr>
+      </tbody>
+    </table>
+
+    <h2>License</h2>
+    <p>Apache-2.0. See <a href="LICENSE">LICENSE</a>.</p>
+
+    <h2>Contributing</h2>
+    <p>See <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+  </main>
+
+  <footer>
+    <p>Built by <a href="https://wgnr.ai">wgnr.ai</a>. wRS v0.1. Agents that change, proven.</p>
+  </footer>
+</body>
+</html>
