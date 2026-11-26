@@ -119,11 +119,34 @@
       font-size: 0.9em;
       opacity: 0.85;
     }
+
+    header .logo-dark {
+      display: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      header .logo-light {
+        display: none;
+      }
+
+      header .logo-dark {
+        display: inline-block;
+      }
+    }
+
+    header img {
+      height: 99px;
+      width: auto;
+      max-width: 100%;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>wRS</h1>
+    <h1>
+      <img class="logo-light" src="assets/wrs-logo-light.png" alt="wRS" width="225" height="99">
+      <img class="logo-dark" src="assets/wrs-logo-dark.png" alt="wRS" width="225" height="99">
+    </h1>
     <h3>The open self-improvement governance standard for AI agents.</h3>
     <p class="badges">
       <img src="https://img.shields.io/badge/license-Apache--2.0-blue" alt="License: Apache-2.0">
