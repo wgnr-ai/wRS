@@ -10,7 +10,7 @@
 
 ## What it is
 
-wRS governs how agents **change** — their own prompts, instructions, and workflows. wOS
+wRS governs how agents **change**: their own prompts, instructions, and workflows. wOS
 governs how agents *behave*; wRS governs how they *improve*. Like wOS, it is a
 specification, not a framework: it sits on top of your runtime and defines the contract a
 self-improving system must satisfy before it is allowed to ship a change to itself.
@@ -24,12 +24,12 @@ party other than the one that shipped.**
 Agents today improve in exactly two ways, and both are wrong:
 
 - **Ungoverned:** self-rewriting loops that edit their own instructions continuously and keep
-  whatever scores better — no gates, no audit, frequently executing generated code with
-  production permissions. Fast, unauditable, and one drift event from silent failure.
+  whatever scores better (no gates, no audit, frequently executing generated code with
+  production permissions). Fast, unauditable, and one drift event from silent failure.
 - **Not at all:** frozen prompts. Every improvement requires a human to notice, design,
   test, and apply it by hand. Safe, slow, and it never compounds.
 
-wRS defines the middle path — a **charter-gated improvement loop**: an agent may
+wRS defines the middle path (a **charter-gated improvement loop**): an agent may
 self-initiate and auto-ship inside a pre-registered, mechanically verified class, while
 spend, external effects, irreversible actions, and boundary changes stay human. The level
 you operate at is explicit, printed, and checkable.
@@ -38,7 +38,7 @@ you operate at is explicit, printed, and checkable.
 
 wRS was authored inside [wgnr.ai](https://wgnr.ai) and validated the way it prescribes:
 pre-registered decision rules, blind runs, self-tested mechanical graders, and literal
-verdicts across four experiments — **including a published null result** where fleet
+verdicts across four experiments, **including a published null result** where fleet
 telemetry did *not* confirm the laboratory finding. The full evidence, including what
 failed, is in [evidence/RESULTS.md](evidence/RESULTS.md).
 
@@ -72,4 +72,4 @@ Apache-2.0. See <LICENSE>.
 
 See <CONTRIBUTING.md>.
 
-Built by [wgnr.ai](https://wgnr.ai) — wRS v0.1. Agents that change, proven.
+Built by [wgnr.ai](https://wgnr.ai) (wRS v0.1). Agents that change, proven.

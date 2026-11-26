@@ -1,9 +1,9 @@
-# AGD — Artifact Grading Directive
+# AGD: Artifact Grading Directive
 
 The first certified output of the wRS protocol. Coined, written, and evidence-backed by
 [wgnr.ai](https://wgnr.ai); the term was checked for prior use before publication (no
 prior use found in its domain). Shipped to every agent in a production Agent Zero fleet as
-a system-prompt directive under explicit Principal approval — a pasted-approval ship, not a
+a system-prompt directive under explicit Principal approval: a pasted-approval ship, not a
 fast-track one, because fast-track did not yet exist.
 
 ## The directive (verbatim, 628 characters)
@@ -34,7 +34,7 @@ reports retain them internally.
   length-matching padding clauses present in the *tested* block were deliberately dropped
   from the adopted text and the deviation is recorded in the study report.
 - Adoption verification was done from disk, not from the shipper's summary: byte-identity
-  of the file, exactly one copy per prompt build (counted in fresh sessions — counts inside
+  of the file, exactly one copy per prompt build (counted in fresh sessions; counts inside
   working sessions are contaminated by tool echoes), coexistence with existing directives,
   and framework files untouched.
 - The directive costs approximately 100 tokens per prompt build (estimate at the chat's own
@@ -43,7 +43,7 @@ reports retain them internally.
 ## Why it works
 
 The presentation rubric rewards *visible diligence*, so agents under it build verifiers,
-re-count settled numbers, and narrate — all correct, all invisible to grading. Measured
+re-count settled numbers, and narrate (all correct, all invisible to grading). Measured
 once: 14–15 rounds of self-auditing theater versus 3–4 rounds for the same correct output
 under the artifact rubric. The artifact rubric removes the reward for theater without
 removing the work.

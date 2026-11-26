@@ -8,11 +8,11 @@ Key words MUST, MUST NOT, SHALL are requirements of the standard.
 
 ## 1. Terms
 
-- **Principal** — the human on whose authority the system operates.
-- **Actor** — the agent proposing or shipping a change.
-- **Verifier** — a mechanical checker executed on a surface the Actor cannot write to.
-- **Ship** — making a change live in the target system.
-- **Fast-track** — the allowlisted class of changes an L2 system may ship without a
+- **Principal**, the human on whose authority the system operates.
+- **Actor**, the agent proposing or shipping a change.
+- **Verifier**, a mechanical checker executed on a surface the Actor cannot write to.
+- **Ship**, making a change live in the target system.
+- **Fast-track**, the allowlisted class of changes an L2 system may ship without a
   per-instance human approval, subject to §5.
 
 ## 2. Conformance levels
@@ -34,7 +34,7 @@ The following remain human decisions regardless of level, file type, or path:
 1. **Spend** beyond Principal-set caps (per-experiment and per-cycle).
 2. Anything sent **as, or to, another person**.
 3. **Irreversible** actions.
-4. **Permission, boundary, or policy changes** — including amending this specification.
+4. **Permission, boundary, or policy changes**, including amending this specification.
    In a prompt-driven system, **prompt text is policy**: any content that sets or alters
    escalation rules, permissions, routing, identity, or another agent's instructions is
    gate-4 material regardless of file type.
@@ -44,13 +44,13 @@ The following remain human decisions regardless of level, file type, or path:
 A change MAY enter the fast-track only through the protocol defined in
 [protocol/foundry.md]. Normative requirements:
 
-1. The decision rule is **pre-registered** — written before the first run, with explicit
+1. The decision rule is **pre-registered**, written before the first run, with explicit
    pass thresholds for every metric.
 2. Runs are **blind**: the scorer cannot see which condition produced which result until
    scoring is complete.
 3. The mechanical grader MUST pass a **self-test proving both directions** (correct
    artifacts pass, empty artifacts fail, tamper cases fail) before any result is quoted.
-4. The verdict is evaluated **literally as registered** — no re-scoring after seeing data.
+4. The verdict is evaluated **literally as registered**. No re-scoring after seeing data.
 5. Tie-breaking conventions for any numeric criterion MUST be registered before the run.
 
 ## 5. The fast-track class
@@ -60,7 +60,7 @@ A change MAY auto-ship only if **all** of the following hold:
 1. **Create-new-file only**, within allowlisted locations designated by the implementation,
    **and non-displacing**:
    - its identifier (basename) must be **globally unique** across every location where
-     same-named modules are deduplicated — a collision silently overrides existing behavior
+     same-named modules are deduplicated. A collision silently overrides existing behavior
      without editing any file;
    - for text-inclusion mechanisms with a token budget, the ship MUST carry a **before/after
      resolution of the include set**: any file that loaded before the ship and fails to load
@@ -75,13 +75,13 @@ A change MAY auto-ship only if **all** of the following hold:
    restores prior state by construction.
 4. **Protocol passed** per §4.
 5. **Within caps** per §3.
-6. **Ship notification in the same turn — a control, not a receipt.** It MUST carry:
+6. **Ship notification in the same turn (a control, not a receipt).** It MUST carry:
    the full file text verbatim; the uniqueness check result (scopes scanned, zero
    collisions); the include-set before/after resolution; and the restore command naming the
    exact backup artifact. A notification that describes rather than shows the text does not
    satisfy this requirement.
 
-A per-instance human reply is NOT required for a fast-track ship — the notification's
+A per-instance human reply is NOT required for a fast-track ship. The notification's
 latency equals a ping's; requiring replies would collapse L2 into L1.
 
 ## 6. Independent verification and rollback
@@ -93,11 +93,11 @@ latency equals a ping's; requiring replies would collapse L2 into L1.
    is reported as such, and triggers rollback of every ship not covered by a passing
    verdict. A verifier that did not run MUST be indistinguishable from one that failed.
 3. **Rollback semantics:** create-only change ⇒ remove the file (removal IS the restore);
-   edited file ⇒ copy back the named artifact. Never "latest" — rotation can evict the
+   edited file ⇒ copy back the named artifact. Never "latest". Rotation can evict the
    restore target.
 4. **Timing:** on Verifier FAIL, the Verifier executes the removal before it exits; on a
    Principal flag, within one turn.
-5. **Authority:** the **Verifier** executes rollback, not the Actor — if the shipped file
+5. **Authority:** the **Verifier** executes rollback, not the Actor. If the shipped file
    broke the Actor, the Actor cannot be the one to fix it.
 6. **Scope:** a level revert to L1 suspends fast-track authority system-wide; file rollback
    is limited to the shipped file. Memories, schedules, and reports from the cycle are
@@ -114,7 +114,7 @@ latency equals a ping's; requiring replies would collapse L2 into L1.
 4. Verdict evaluated literally; no post-hoc re-scoring.
 5. Every ship met all of §5, with evidence in the ship notification.
 6. Spend reported against caps with its source cited.
-7. No writes outside the implementation's sanctioned area (checked by detection — state it
+7. No writes outside the implementation's sanctioned area (checked by detection, state it
    as detection, never as proof of absence).
 
 ## 8. Budgets and spend
@@ -128,7 +128,7 @@ interrupts immediately.
 wOS and wRS are siblings: wOS specifies how an agent **behaves**; wRS specifies how an agent
 is allowed to **change**. An implementation may conform to either or both; the two do not
 overlap, and this specification deliberately restates no wOS counts (domains, directives,
-checks) — those are upstream facts that move. Cite [wOS](https://wos.wgnr.ai) for them;
+checks). Those are upstream facts that move. Cite [wOS](https://wos.wgnr.ai) for them;
 our verification record lives in [docs/index.md](docs/index.md).
 
 ## Appendix A — Artifact Grading Directive (AGD)

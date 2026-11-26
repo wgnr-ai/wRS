@@ -6,7 +6,7 @@ discipline the standard prescribes.
 ## How to propose a change
 
 1. **Open an issue first** for anything normative (§-level text, new criteria, level
-   definitions). Describe the gap with a concrete scenario — "an implementation at L2 needs
+   definitions). Describe the gap with a concrete scenario: "an implementation at L2 needs
    X because Y" beats "I think X should change."
 2. **Corrections** (broken links, unclear wording, contradictions): PR directly against the
    relevant file. Errata for released spec versions are logged under `docs/` with a date,

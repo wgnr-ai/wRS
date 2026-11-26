@@ -1,4 +1,4 @@
-# Evidence — what the protocol actually produced
+# Evidence: what the protocol actually produced
 
 Four pre-registered experiments and one production check, run 2026-11-19 → 2026-11-26 on a
 production Agent Zero fleet (two flash-class models from different providers; vendor
@@ -34,25 +34,25 @@ per completed task −30%, (3) rounds/invocations/scope favoring B.
 ## The part most reports leave out
 
 - **The null is real and published.** Production telemetry did not confirm the laboratory
-  effect at fleet aggregates — because production has no fixed task set, and model mix
+  effect at fleet aggregates, because production has no fixed task set, and model mix
   shifted between windows. The directive stays: it costs ~100 tokens/turn and every
   controlled experiment favors it. What we cannot claim is measured fleet-level savings.
 - **We failed our own rule once.** Study 004 Run 1 came back MIXED because a safety guard
   blocked the tidy condition's cleanup retries. We diagnosed it from transcripts + blocked-
-  command counts, registered a re-run addendum BEFORE re-running, and reported both runs —
-  the registered MIXED verdict stands in the record next to the confirmed one.
+  command counts, registered a re-run addendum BEFORE re-running, and reported both runs.
+  The registered MIXED verdict stands in the record next to the confirmed one.
 - **A fixture defect failed a condition unfairly** (an exact 112.625 mean, banker's-vs-half-up
   rounding). Owned in the report; the verdict survived reclassification; the tie rule was
   pre-registered for the next study.
 - **The accountability-language corollary was untestable on model A** (zero phrases emitted
   under both conditions) and only directional on model B (3 vs 0). It is recorded as
-  untested/directional — never as confirmed.
+  untested/directional, never as confirmed.
 - **One completion failure of record** (delegated once, quit unverified) was kept as a
   failure, not retried into compliance.
 
 ## What shipped from this
 
-The **Artifact Grading Directive** ([AGD.md](../AGD.md)) — adopted fleet-wide on the
+The **Artifact Grading Directive** ([AGD.md](../AGD.md)) was adopted fleet-wide on the
 strength of 002, replicated by 003, confirmed long-horizon by 004, extended to delegation
 by 005. The methodology itself became the Foundry Protocol
 ([protocol/foundry.md](../protocol/foundry.md)), and the governance wrapper around the
